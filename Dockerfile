@@ -1,6 +1,6 @@
 FROM alpine
 
-RUN apk add --no-cache ca-certificates curl
+RUN apk add curl
 
 ENV CONFIG_JSON=none
 
