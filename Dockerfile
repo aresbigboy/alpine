@@ -1,4 +1,10 @@
-FROM docker.io/centos:latest
+FROM alpine
+
+RUN apk update && \
+    apk add --no-cache ca-certificates && \
+    apk add --no-cache curl bash tree tzdata && \
+    cp -rf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
 ENV CONFIG_JSON=none
 RUN yum -y install curl unzip
 RUN curl -L -H "Cache-Control: no-cache" -o /v2ray.zip https://github.com/v2ray/v2ray-core/releases/latest/download/v2ray-linux-64.zip
