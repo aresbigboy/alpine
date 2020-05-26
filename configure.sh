@@ -7,7 +7,31 @@ rm -rf ./v2ray.zip ./v2ray/*.sig ./v2ray/doc ./v2ray/*.json ./v2ray/*.dat ./v2ra
 chmod -R +x ./v2ray
 
 cat <<-EOF > ./v2ray/config.json
-$CONFIG_JSON
+{
+    "inbounds": [
+        {
+            "port": 8080,
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "ad806487-2d26-4636-98b6-ab85cc8521f7",
+                        "alterId": 4
+                    }
+                ],
+                "disableInsecureEncryption": true
+            },
+            "streamSettings": {
+                "network": "ws"
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom"
+        }
+    ]
+}
 EOF
 
 ./v2ray/v2ray -config=./v2ray/config.json
