@@ -1,8 +1,6 @@
 FROM alpine
 
-RUN apk fix
-RUN apk upgrade && apk update
-RUN apk add --no-cache --virtual .build-deps ca-certificates curl
+RUN apk add --no-cache ca-certificates curl
 
 ENV CONFIG_JSON=none
 
