@@ -1,6 +1,5 @@
-FROM centos:latest
+FROM ubuntu:18.04
 MAINTAINER aresbigboy
-RUN yum -y install curl
 
 ENV CONFIG_JSON=none
 
