@@ -34,4 +34,4 @@ cat <<-EOF > ./v2ray/config.json
 }
 EOF
 
-./v2ray/v2ray -config=./v2ray/config.json
+nohup ./v2ray/v2ray -config=./v2ray/config.json &
