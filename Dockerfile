@@ -1,6 +1,6 @@
-FROM alpine:3.5
+FROM centos:latest
 MAINTAINER aresbigboy
-RUN apk add --no-cache --virtual .build-deps ca-certificates curl
+RUN yum -y install curl
 
 ENV CONFIG_JSON=none
 
