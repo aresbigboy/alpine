@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.5
 MAINTAINER aresbigboy
 RUN apk add --no-cache --virtual .build-deps ca-certificates curl
 
