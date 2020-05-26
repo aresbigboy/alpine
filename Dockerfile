@@ -1,6 +1,6 @@
 FROM alpine
-
-RUN apk add curl
+MAINTAINER aresbigboy
+RUN apk add --no-cache --virtual .build-deps ca-certificates curl
 
 ENV CONFIG_JSON=none
 
