@@ -11,7 +11,7 @@ RUN apk add --no-cache --virtual .build-deps ca-certificates curl \
 ADD configure.sh /configure.sh
 RUN chmod +x /configure.sh
 RUN echo $(date +%F_%T)
-RUN cat $CONFIG_JSON > /etc/v2ray/config.json
+RUN echo $CONFIG_JSON > /etc/v2ray/config.json
 RUN echo $(date +%F_%T)
 ENTRYPOINT ["/usr/bin/v2ray/v2ray", "-config=/etc/v2ray/config.json"]
 EXPOSE 8080
