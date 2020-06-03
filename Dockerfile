@@ -13,5 +13,5 @@ ADD configure.sh /configure.sh
 RUN echo "222"
 RUN chmod +x /configure.sh
 RUN echo "333"
-ENTRYPOINT ["sh", "/configure.sh"]
+CMD ["sh", "/configure.sh"]
 EXPOSE 8080
